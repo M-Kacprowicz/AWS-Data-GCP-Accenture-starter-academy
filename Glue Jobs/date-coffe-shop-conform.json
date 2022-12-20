@@ -1,0 +1,39 @@
+{
+  "name" : "date-coffe-shop-conform",
+  "description" : "",
+  "role" : "arn:aws:iam::263073453420:role/service-role/AWSGlueServiceRole-test",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 1
+  },
+  "command" : {
+    "name" : "glueetl",
+    "scriptLocation" : "s3://aws-glue-assets-263073453420-eu-west-1/scripts/date-coffe-shop-conform.py",
+    "pythonVersion" : "3"
+  },
+  "defaultArguments" : {
+    "--enable-metrics" : "true",
+    "--enable-spark-ui" : "true",
+    "--spark-event-logs-path" : "s3://aws-glue-assets-263073453420-eu-west-1/sparkHistoryLogs/",
+    "--enable-job-insights" : "true",
+    "--enable-glue-datacatalog" : "true",
+    "--enable-continuous-cloudwatch-log" : "true",
+    "--job-bookmark-option" : "job-bookmark-enable",
+    "--job-language" : "python",
+    "--TempDir" : "s3://aws-glue-assets-263073453420-eu-west-1/temporary/",
+    "--enable-auto-scaling" : "true"
+  },
+  "maxRetries" : 0,
+  "allocatedCapacity" : 5,
+  "timeout" : 10,
+  "maxCapacity" : 5.0,
+  "glueVersion" : "3.0",
+  "numberOfWorkers" : 5,
+  "workerType" : "G.1X",
+  "executionClass" : "FLEX",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "AWS-Data-GCP-Accenture-starter-academy",
+    "branch" : "main",
+    "folder" : "Glue Jobs"
+  }
+}
